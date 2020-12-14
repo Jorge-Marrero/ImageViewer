@@ -1,6 +1,6 @@
 package control;
 
-import app.MockImageLoader;
+import app.mock.MockImageLoader;
 import java.util.List;
 import model.Image;
 import view.ImageDisplay;

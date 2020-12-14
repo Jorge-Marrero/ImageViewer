@@ -1,4 +1,4 @@
-package app;
+package app.mock;
 
 import control.Command;
 import control.ExitCommand;
