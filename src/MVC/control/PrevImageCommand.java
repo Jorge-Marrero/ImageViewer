@@ -1,8 +1,8 @@
-package control;
+package MVC.control;
 
 import java.util.List;
-import model.Image;
-import view.ImageDisplay;
+import MVC.model.Image;
+import MVC.view.ImageDisplay;
 
 public class PrevImageCommand implements Command{
     

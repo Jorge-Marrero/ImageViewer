@@ -1,4 +1,4 @@
-package model;
+package MVC.model;
 
 public class Image {
     private final String name;

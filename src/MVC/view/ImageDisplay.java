@@ -1,6 +1,6 @@
-package view;
+package MVC.view;
 
-import model.Image;
+import MVC.model.Image;
 
 public interface ImageDisplay {
     public void display(Image image);

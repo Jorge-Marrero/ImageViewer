@@ -1,8 +1,8 @@
-package app.swing;
+package MVC.app.swing;
 
-import control.Command;
-import control.NextImageCommand;
-import control.PrevImageCommand;
+import MVC.control.Command;
+import MVC.control.NextImageCommand;
+import MVC.control.PrevImageCommand;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,8 +14,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
-import model.Image;
-import view.ImageDisplay;
+import MVC.model.Image;
+import MVC.view.ImageDisplay;
 
 public class Main extends JFrame{
     private List<Image> images;

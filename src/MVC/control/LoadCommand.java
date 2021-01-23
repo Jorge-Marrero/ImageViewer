@@ -1,10 +1,10 @@
-package control;
+package MVC.control;
 
-import app.mock.MockImageLoader;
+import MVC.app.mock.MockImageLoader;
 import java.util.List;
-import model.Image;
-import view.ImageDisplay;
-import view.ImageLoader;
+import MVC.model.Image;
+import MVC.view.ImageDisplay;
+import MVC.view.ImageLoader;
 
 public class LoadCommand implements Command{
 

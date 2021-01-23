@@ -1,9 +1,9 @@
-package app.mock;
+package MVC.app.mock;
 
 import java.util.ArrayList;
 import java.util.List;
-import model.Image;
-import view.ImageLoader;
+import MVC.model.Image;
+import MVC.view.ImageLoader;
 
 public class MockImageLoader implements ImageLoader {
 

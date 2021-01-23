@@ -1,4 +1,4 @@
-package app.swing;
+package MVC.app.swing;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -6,8 +6,8 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-import model.Image;
-import view.ImageDisplay;
+import MVC.model.Image;
+import MVC.view.ImageDisplay;
 
 public class BlockPanel extends JPanel implements ImageDisplay{
     

@@ -1,4 +1,4 @@
-package control;
+package MVC.control;
 
 public class ExitCommand implements Command{
 

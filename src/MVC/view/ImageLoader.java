@@ -1,7 +1,7 @@
-package view;
+package MVC.view;
 
 import java.util.List;
-import model.Image;
+import MVC.model.Image;
 
 
 public interface ImageLoader {

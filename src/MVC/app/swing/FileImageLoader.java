@@ -1,11 +1,11 @@
-package app.swing;
+package MVC.app.swing;
 
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.List;
-import model.Image;
-import view.ImageLoader;
+import MVC.model.Image;
+import MVC.view.ImageLoader;
 
 public class FileImageLoader implements ImageLoader{
     private final File root;

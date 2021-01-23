@@ -1,7 +1,7 @@
-package app.mock;
+package MVC.app.mock;
 
-import model.Image;
-import view.ImageDisplay;
+import MVC.model.Image;
+import MVC.view.ImageDisplay;
 
 public class MockImageDisplay implements ImageDisplay{
     private Image image;

@@ -1,19 +1,19 @@
-package app.mock;
+package MVC.app.mock;
 
-import control.Command;
-import control.ExitCommand;
-import control.LoadCommand;
-import control.NextImageCommand;
-import control.NullCommand;
-import control.PrevImageCommand;
+import MVC.control.Command;
+import MVC.control.ExitCommand;
+import MVC.control.LoadCommand;
+import MVC.control.NextImageCommand;
+import MVC.control.NullCommand;
+import MVC.control.PrevImageCommand;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import model.Image;
-import view.ImageDisplay;
-import view.ImageLoader;
+import MVC.model.Image;
+import MVC.view.ImageDisplay;
+import MVC.view.ImageLoader;
 
 public class Main {
     public static void main(String[] args) {
