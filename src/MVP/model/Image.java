@@ -2,6 +2,7 @@ package MVP.model;
 
 public class Image {
     private final String name;
+    
     public Image(String name){
         this.name = name;
     }

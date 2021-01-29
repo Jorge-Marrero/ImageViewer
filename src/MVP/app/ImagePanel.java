@@ -17,6 +17,9 @@ import javax.swing.JPanel;
 public class ImagePanel extends JPanel implements ImageDisplay{
     private Image image;
     private Image image2;
+    BufferedImage actual;
+    BufferedImage next;
+    int offset;
     private Shift shift;
     private int x;
     
@@ -28,24 +31,20 @@ public class ImagePanel extends JPanel implements ImageDisplay{
     
     @Override
     public void paint(Graphics g){
-        if(this.image == null){
-           return;
+        actual = load(this.image);
+        g.drawImage(actual, x, 0, null);
+        if(x != 0){
+            next = load(this.image2);
+            offset = x > 0 ? -(next.getWidth() - x) : x + actual.getWidth();
+            g.drawImage(next, offset, 0, null);
         }
-        BufferedImage image = load(this.image);
-        g.drawImage(image, x, 0, null);
-        if(x == 0){
-            return;
-        }
-        BufferedImage image2 = load(this.image2);
-        int offset = x > 0 ? -(image2.getWidth() - x) : x + image.getWidth();
-        g.drawImage(image2, offset, 0, null);
+        
     }
     
     private BufferedImage load(Image image){
         try{
             return ImageIO.read(new File(image.getName()));
-        }catch(IOException ex){
-            Logger.getLogger(ImagePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }catch(IOException e){
             return null;
         }
     }

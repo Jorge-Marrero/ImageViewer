@@ -14,6 +14,10 @@ public class ImagePresenter {
         this.imageDisplay.on(shift());
     }
 
+    private int current() {
+        return images.indexOf(imageDisplay.image());
+    }
+    
     private ImageDisplay.Shift shift() {
         return new ImageDisplay.Shift() {
 
@@ -25,10 +29,6 @@ public class ImagePresenter {
             @Override
             public Image right() {
                 return images.get((current() - 1 + images.size()) % images.size());
-            }
-
-            private int current() {
-                return images.indexOf(imageDisplay.image());
             }
         };
     }

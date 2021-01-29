@@ -9,18 +9,18 @@ import javax.swing.JPanel;
 import MVC.model.Image;
 import MVC.view.ImageDisplay;
 
-public class BlockPanel extends JPanel implements ImageDisplay{
+public class ImagePanel extends JPanel implements ImageDisplay{
     
     private Image image;
     private BufferedImage bufferedImage;
     
-    public BlockPanel() {
+    public ImagePanel() {
     }
     
     @Override
     public void paint(Graphics g){
-        Box box = new Box(bufferedImage);
-        g.drawImage(bufferedImage, box.x, box.y, box.width, box.height, null);
+        Bound bound = new Bound(bufferedImage);
+        g.drawImage(bufferedImage, bound.x, bound.y, bound.width, bound.height, null);
     }
 
     private BufferedImage load(String name){
@@ -43,33 +43,33 @@ public class BlockPanel extends JPanel implements ImageDisplay{
         return image;
     }
     
-    private class Box{
+    private class Bound{
         final int x;
         final int y;
         final int width;
         final int height;
-        private final int px;
-        private final int py;
+        private final int pw;
+        private final int ph;
 
-        public Box(BufferedImage image) {
-            this.px = getWidth();
-            this.py = getHeight();
+        public Bound(BufferedImage image) {
+            this.pw = getWidth();
             this.width = calculateWidth(image.getWidth(), image.getHeight());
+            this.ph = getHeight();
             this.height = calculateHeight(image.getWidth(), image.getHeight());
-            this.x = (px - width)/2;
-            this.y = (py - height)/2;
+            this.x = (ph - width)/2;
+            this.y = (pw - height)/2;
         }
 
         private int calculateWidth(double ix, double iy) {
-            double pr = (double) px / py;
+            double pr = (double) ph / pw;
             double ir = ix / iy;
-            return ir > pr ? px : (int) (ix * py / iy);
+            return ir > pr ? ph : (int) (ix * pw / iy);
         }
 
         private int calculateHeight(double ix, double iy) {
-           double pr = (double) px / py;
+           double pr = (double) ph / pw;
            double ir = ix / iy;
-           return ir > pr ? (int) (iy * px / ix) : py; 
+           return ir > pr ? (int) (iy * ph / ix) : ph; 
         }
     }
 }

@@ -16,6 +16,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import MVC.model.Image;
 import MVC.view.ImageDisplay;
+import java.awt.FlowLayout;
 
 public class Main extends JFrame{
     private List<Image> images;
@@ -33,18 +34,23 @@ public class Main extends JFrame{
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.getContentPane().add(imagePanel());
         this.add(toolbar(), BorderLayout.SOUTH);
+        this.images = new FileImageLoader(new File("fotos")).load();
+        this.imageDisplay.display(images.get(0));
+        this.commands.put("<", new PrevImageCommand(images, imageDisplay));
+        this.commands.put(">", new NextImageCommand(images, imageDisplay));
     }
     
     private JPanel imagePanel() {
-        BlockPanel blockPanel = new BlockPanel();
-        this.imageDisplay = blockPanel;
-        return blockPanel;
+        ImagePanel imagePanel = new ImagePanel();
+        this.imageDisplay = imagePanel;
+        return imagePanel;
     }
 
     private JMenuBar toolbar() {
         JMenuBar toolbar = new JMenuBar();
-        toolbar.add(button("<"));
-        toolbar.add(button(">"));
+        toolbar.setLayout(new FlowLayout(FlowLayout.CENTER));
+        toolbar.add(button("anterior"));
+        toolbar.add(button("siguiente"));
         return toolbar;
     }
 
@@ -60,10 +66,6 @@ public class Main extends JFrame{
     }
     
     private void execute() {
-        this.images = new FileImageLoader(new File("fotos")).load();
-        this.imageDisplay.display(images.get(0));
-        this.commands.put("<", new PrevImageCommand(images, imageDisplay));
-        this.commands.put(">", new NextImageCommand(images, imageDisplay));
         this.setVisible(true);
     }    
 }
